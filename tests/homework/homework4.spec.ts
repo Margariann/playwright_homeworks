@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test('Drones', async ({ page }) => {
+test('Search drone and add to basket', async ({ page }) => {
   await page.goto('https://www.zigzag.am/');
   await page.locator('.catalog_btn').click();
   const games = page.locator('.full_list .list_content .category_name', { hasText: 'Խաղեր, ծրագրեր, զվարճանք' });
@@ -19,7 +19,7 @@ test('Drones', async ({ page }) => {
   const add = page.locator('button.action.tocart');
   await add.click();
   // const message = page.locator('.message-success.success message');
-  // await expect(message).toBeVisible();   error a talis es mase, dra hamar em comment arel 
+  // await expect.soft(message).toBeVisible();
   const basket = page.locator('a.action.primary.viewcart', { hasText: 'Զամբյուղ' });
   await basket.click();
   await expect(page).toHaveTitle(/Գնումների զամբյուղ/);
