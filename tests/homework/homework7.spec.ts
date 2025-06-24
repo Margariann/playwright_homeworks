@@ -14,7 +14,7 @@ test('Check that all product categories contain "Apple watch"', async ({ page })
     // Գտնել բոլոր կատեգորիաների անունները
     const appleWatch = page.locator('.product_category');
     const count = await appleWatch.count();
-    //  Գտնել կատեգորիաներ, որտեղ չկարողացանք գտնել "Apple watch"
+    //  Գտնել կատեգորիաներ, որտեղ չկա "Apple watch"
     let foundMismatch = false;
 
     for (let i = 0; i < count; i++) {
